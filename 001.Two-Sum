@@ -4,13 +4,23 @@ def twoSum( nums, target):
     :type target: int
     :rtype: List[int]
     """
-    bequeath = {}
-    for i, num in enumerate(nums):
-        if target - num in d:
+    bequeath = {} #bequeath作为遍历后所遗留的的序列
+    for i, num in enumerate(nums): #enumrate：让列表中的元素&序列呈现(sequence,element)的可以遍历的数据结构
+        if target - num in bequeath: #bequeath默认情况下，是bequeath.keys()
             return [bequeath[target - num], i]
         bequeath[num] = i
   
   
-  #The second
-  
+#The second
+def twoSum( nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    for now in nums:
+            for next in range(nums.index(now)+1,len(nums)):
+                if now+nums[next]==target:
+                    return (nums.index(now),next)
+    
   
